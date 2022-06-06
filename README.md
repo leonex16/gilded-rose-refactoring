@@ -1,6 +1,12 @@
-# Gilded Rose
+# Gilded Rose Kata
 
-This is the Gilded Rose kata in TypeScript.
+This repository is the solution to [emilybache/GildedRose-Refactoring-Kata](https://github.com/emilybache/GildedRose-Refactoring-Kata) with typescript.
+
+Branches definition to the following:
+
+- main :arrow_right: Original unmodifications code from [typescript glided rose](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/TypeScript)
+- semantic-refactor :arrow_right: Changes to improve code readability
+- solid-refactor :arrow_right: Changes applying SOLID principles
 
 ## Getting started
 
@@ -11,13 +17,13 @@ npm install
 ```
 
 ## Running app
-_You may need to install `ts-node`_
 
 ```sh
 npx ts-node test/golden-master-text-test.ts
 ```
 
 Or with number of days as args:
+
 ```sh
 npx ts-node test/golden-master-text-test.ts 10
 ```
@@ -36,10 +42,4 @@ To run all tests in watch mode
 
 ```sh
 npm run test:jest:watch
-```
-
-### Mocha way
-
-```sh
-npm run test:mocha
 ```
