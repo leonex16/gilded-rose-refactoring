@@ -1,17 +1,21 @@
-import { Item, GildedRose } from '../app/gilded-rose';
+import { AgedBrieItem } from '../app/item/items/aged-brie-item';
+import { BackstagePassItem } from '../app/item/items/backstage-pass-item';
+import { StandardItem } from '../app/item/items/standard-item';
+import { SulfurasItem } from '../app/item/items/sulfuras-item';
+import { GildedRose } from '../app/gilded-rose';
 
 const items = [
-  new Item("+5 Dexterity Vest", 10, 20), //
-  new Item("Aged Brie", 2, 0), //
-  new Item("Elixir of the Mongoose", 5, 7), //
-  new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-  new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-  new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-  new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-  new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+  new StandardItem({ name: "+5 Dexterity Vest", sellIn: 10, quality: 20 }),
+  new AgedBrieItem({ name: "Aged Brie", sellIn: 2, quality: 0 }),
+  new StandardItem({ name: "Elixir of the Mongoose", sellIn: 5, quality: 7 }),
+  new SulfurasItem({ name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80 }),
+  new SulfurasItem({ name: "Sulfuras, Hand of Ragnaros", sellIn: -1, quality: 80 }),
+  new BackstagePassItem({ name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 15, quality: 20 }),
+  new BackstagePassItem({ name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 10, quality: 49 }),
+  new BackstagePassItem({ name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 5, quality: 49 }),
   // this conjured item does not work properly yet
-  new Item("Conjured Mana Cake", 3, 6)];
-
+  // new Item("Conjured Mana Cake", 3, 6) TODO
+];
 
 const gildedRose = new GildedRose(items);
 
@@ -24,9 +28,7 @@ for (let i = 0; i < days; i++) {
   console.log("-------- day " + i + " --------");
   console.log("name, sellIn, quality");
   items.forEach(element => {
-    console.log(element.name + ' ' + element.sellIn + ' ' + element.quality);
-
+    console.log(element.name + ' ' + element.sellInValue + ' ' + element.qualityValue);
   });
-  console.log();
   gildedRose.updateQuality();
 }

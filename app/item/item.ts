@@ -36,10 +36,12 @@ export abstract class Item {
 
   protected sellIn: ItemSellIn;
   protected quality: ItemQuality;
+  public name: string;
 
   constructor(protected item: { name: string; sellIn: number; quality: number }) {
     this.sellIn = new ItemSellIn(item.sellIn);
     this.quality = new ItemQuality(item.quality);
+    this.name = item.name;
   }
 
   abstract updateQuality(): void;
